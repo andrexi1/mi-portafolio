@@ -13,30 +13,50 @@ export default function Navbar() {
       {/* LINKS */}
       <ul className="navbar-links">
         <li>
-          <NavLink to="/about" className={({ isActive }) => isActive ? "active" : ""}>
+          <NavLink
+            to="/about"
+            className={({ isActive }) =>
+              `nav-link ${isActive ? "active" : ""}`
+            }
+          >
             Sobre mí
           </NavLink>
         </li>
 
         <li>
-          <NavLink to="/portfolio" className={({ isActive }) => isActive ? "active" : ""}>
+          <NavLink
+            to="/portfolio"
+            className={({ isActive }) =>
+              `nav-link ${isActive ? "active" : ""}`
+            }
+          >
             Portafolio
           </NavLink>
         </li>
 
         <li>
-          <NavLink to="/experience" className={({ isActive }) => isActive ? "active" : ""}>
+          <NavLink
+            to="/experience"
+            className={({ isActive }) =>
+              `nav-link ${isActive ? "active" : ""}`
+            }
+          >
             Experiencia
           </NavLink>
         </li>
 
         <li>
-          <NavLink to="/academy" className={({ isActive }) => isActive ? "active" : ""}>
+          <NavLink
+            to="/academy"
+            className={({ isActive }) =>
+              `nav-link ${isActive ? "active" : ""}`
+            }
+          >
             Academia
           </NavLink>
         </li>
 
-        {/* THEME TOGGLE DEBAJO DE ACADEMIA */}
+        {/* THEME TOGGLE */}
         <li className="theme-item">
           <ThemeToggle />
         </li>

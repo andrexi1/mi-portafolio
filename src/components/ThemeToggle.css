@@ -26,6 +26,20 @@
   z-index: 1000;
 
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+
+  animation: fadeSlide 0.2s ease forwards;
+  transform-origin: top;
+}
+
+@keyframes fadeSlide {
+  from {
+    opacity: 0;
+    transform: translateY(-6px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
 }
 
 /* OPCIONES */
@@ -45,3 +59,20 @@
   background-color: color-mix(in srgb, var(--accent) 15%, transparent);
   transform: translateX(2px);
 }
+
+.theme-btn {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.theme-toggle .theme-btn::after {
+  content: "▾";
+  transition: transform 0.2s ease;
+}
+
+.theme-toggle.open .theme-btn::after {
+  transform: rotate(180deg);
+}
+
+

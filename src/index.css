@@ -18,10 +18,11 @@
 body {
   background-color: var(--bg);
   color: var(--text);
-  margin: 0;
-  font-family: system-ui, sans-serif;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition:
+    background-color 0.35s ease,
+    color 0.35s ease;
 }
+
 
 * {
   box-sizing: border-box;
@@ -30,5 +31,14 @@ body {
 html, body {
   margin: 0;
   padding: 0;
+  width: 100%;
+  min-height: 100%;
   overflow-x: hidden;
+}
+
+
+
+.card {
+  background-color: var(--card);
+  transition: background-color 0.35s ease;
 }

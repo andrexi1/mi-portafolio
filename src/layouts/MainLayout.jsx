@@ -2,35 +2,37 @@ import { Outlet, useLocation } from "react-router-dom";
 import { AnimatePresence, motion } from "framer-motion";
 import Navbar from "../components/Navbar";
 
-export default function Layout() {
+export default function MainLayout() {
   const location = useLocation();
 
   return (
     <>
       <Navbar />
 
-      
       <div
         style={{
           position: "relative",
+          height: "calc(100vh - 70px)",
           overflow: "hidden",
-          minHeight: "calc(100vh - 70px)"
         }}
       >
-        <AnimatePresence mode="wait">
-          <motion.main
+        <AnimatePresence mode="wait" initial={false}>
+          <motion.div
             key={location.pathname}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            transition={{ duration: 0.35, ease: "easeOut" }}
+            initial={{ x: 60, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            exit={{ x: -60, opacity: 0 }}
+            transition={{
+              duration: 0.35,
+              ease: "easeOut",
+            }}
             style={{
-              width: "100%",
-              minHeight: "100%",
+              position: "absolute",
+              inset: 0,
             }}
           >
             <Outlet />
-          </motion.main>
+          </motion.div>
         </AnimatePresence>
       </div>
     </>

@@ -1,18 +1,37 @@
-/* Tema claro */
+/* ===== TEMA CLARO ===== */
+/* ===== TEMA CLARO ===== */
 .light {
   --bg: #f9fafb;
   --text: #111827;
   --card: #ffffff;
   --accent: #6366f1;
+  --border: #e5e7eb;
+
+  --navbar-bg: #ffffff;
+  --navbar-border: #e5e7eb;
 }
 
-/* Tema oscuro */
+/* ===== TEMA OSCURO ===== */
 .dark {
   --bg: #020617;
   --text: #e5e7eb;
   --card: #0f172a;
   --accent: #8b5cf6;
+  --border: rgba(255, 255, 255, 0.1);
+
+  --navbar-bg: #020617;
+  --navbar-border: rgba(255, 255, 255, 0.08);
 }
+
+/* ===== BASE ===== */
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  margin: 0;
+  font-family: system-ui, sans-serif;
+}
+
+
 
 /* Aplicación global */
 body {
@@ -42,3 +61,9 @@ html, body {
   background-color: var(--card);
   transition: background-color 0.35s ease;
 }
+
+.page {
+  min-height: calc(100vh - 70px);
+  padding: 60px 40px;
+}
+

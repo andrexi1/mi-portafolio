@@ -1,61 +1,27 @@
-/* ===== NAVBAR GENERAL ===== */
+/* ===== NAVBAR ===== */
 .navbar {
-  width: 100%;
   height: 70px;
-  padding: 0 40px;
+  padding: 0 48px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: var(--bg-color);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-  position: relative;
+
+  background: color-mix(in srgb, var(--bg) 85%, #000);
+  backdrop-filter: blur(12px);
+
+  position: sticky;
+  top: 0;
   z-index: 1000;
+
+  overflow-x: hidden;
 }
 
 /* ===== LOGO ===== */
 .navbar-logo {
   font-size: 1.4rem;
   font-weight: 600;
+  color: var(--text);
   text-decoration: none;
-  color: var(--text-color);
-}
-
-/* ===== LINKS ===== */
-.navbar-links {
-  display: flex;
-  align-items: center;
-  gap: 28px;
-  margin: 0;
-  padding: 0;
-}
-
-.navbar-links li {
-  list-style: none;
-}
-
-/* ===== NAVLINK ===== */
-.nav-link {
-  position: relative;
-  text-decoration: none;
-  color: var(--text-color);
-  font-size: 1rem;
-  padding: 6px 0;
-  display: inline-block;
-}
-
-/* Línea animada */
-.nav-link::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -6px;
-  width: 0;
-  height: 2px;
-  background-color: currentColor;
-  transition: width 0.3s ease;
-}
-
-.navbar-logo {
   position: relative;
 }
 
@@ -66,7 +32,7 @@
   bottom: -6px;
   width: 0;
   height: 2px;
-  background-color: currentColor;
+  background: var(--accent);
   transition: width 0.3s ease;
 }
 
@@ -74,18 +40,48 @@
   width: 100%;
 }
 
+/* ===== LINKS ===== */
+.navbar-links {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
 
-/* Hover */
+/* ===== LINK ===== */
+.nav-link {
+  color: var(--text);
+  text-decoration: none;
+  font-size: 0.95rem;
+  position: relative;
+  padding: 4px 0;
+}
+
+/* underline */
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0;
+  height: 2px;
+  background: var(--accent);
+  transition: width 0.3s ease;
+}
+
+/* hover */
 .nav-link:hover::after {
   width: 100%;
 }
 
-/* Activo (ruta actual) */
+/* active */
 .nav-link.active::after {
   width: 100%;
 }
 
-/* ===== THEME TOGGLE ===== */
+/* ===== THEME ===== */
 .theme-item {
   margin-left: 10px;
 }
@@ -93,14 +89,10 @@
 /* ===== RESPONSIVE ===== */
 @media (max-width: 768px) {
   .navbar {
-    padding: 0 20px;
+    padding: 0 24px;
   }
 
   .navbar-links {
     gap: 18px;
-  }
-
-  .navbar-logo {
-    font-size: 1.2rem;
   }
 }

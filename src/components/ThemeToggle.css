@@ -13,23 +13,22 @@
 /* MENÚ */
 .theme-menu {
   position: absolute;
-  top: 110%;
+  top: calc(100% + 8px);
   left: 0;
+
   min-width: 140px;
-  background: var(--card);
-  border: 1px solid var(--border);
+  background: var(--navbar-bg);
+  border: 1px solid var(--navbar-border);
   border-radius: 10px;
   padding: 6px;
+
   display: flex;
   flex-direction: column;
   gap: 4px;
-  z-index: 1000;
 
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
-
-  animation: fadeSlide 0.2s ease forwards;
-  transform-origin: top;
+  z-index: 200;
 }
+
 
 @keyframes fadeSlide {
   from {
@@ -56,8 +55,8 @@
 
 /* HOVER */
 .theme-menu button:hover {
-  background-color: color-mix(in srgb, var(--accent) 15%, transparent);
   transform: translateX(2px);
+  background-color: color-mix(in srgb, var(--accent) 12%, transparent);
 }
 
 .theme-btn {

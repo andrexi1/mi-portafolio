@@ -86,6 +86,10 @@
   margin-left: 10px;
 }
 
+.navbar-logo {
+  cursor: default;
+}
+
 /* ===== RESPONSIVE ===== */
 @media (max-width: 768px) {
   .navbar {

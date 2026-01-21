@@ -1,0 +1,33 @@
+.page.experience {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 70px 40px;
+}
+
+.page.experience h1 {
+  font-size: 2.4rem;
+  margin-bottom: 30px;
+}
+
+.page.experience h2 {
+  font-size: 1.3rem;
+  margin-bottom: 16px;
+  color: var(--accent);
+}
+
+.page.experience ul {
+  padding-left: 22px;
+  margin-bottom: 24px;
+}
+
+.page.experience li {
+  margin-bottom: 10px;
+  line-height: 1.6;
+  color: #cbd5f5;
+}
+
+.page.experience p {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: #cbd5f5;
+}

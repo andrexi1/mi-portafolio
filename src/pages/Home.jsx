@@ -1,6 +1,27 @@
-import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
+import { motion } from "framer-motion";
 import "./Home.css";
+
+const container = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.12,
+    },
+  },
+};
+
+const item = {
+  hidden: { opacity: 0, y: 14 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.45,
+      ease: "easeOut",
+    },
+  },
+};
 
 export default function Home() {
   const navigate = useNavigate();
@@ -9,29 +30,37 @@ export default function Home() {
     <section className="home">
       <motion.div
         className="hero"
-        initial={{ opacity: 0, y: 40 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, ease: "easeOut" }}
+        variants={container}
+        initial="hidden"
+        animate="visible"
       >
-        <h1>
-          Hola, soy <span>Andrés</span>
-        </h1>
+        <motion.span className="hero-tag" variants={item}>
+          Desarrollador Frontend
+        </motion.span>
 
-        <h2>Estudiante de Ingeniería de Sistemas</h2>
+        <motion.h1 variants={item}>
+          Construyo <span>interfaces modernas</span> <br />
+          con bases sólidas
+        </motion.h1>
 
-        <p>
-          Desarrollo aplicaciones web con enfoque en backend,
-          arquitectura limpia y buenas prácticas.
-        </p>
+        <motion.p variants={item}>
+          Estudiante de sexto semestre de Ingeniería de Sistemas y Computación.
+          Enfocado en frontend y bases de datos, proactivo, constante y sin miedo
+          a los retos técnicos.
+        </motion.p>
 
-        <motion.button
-          className="cta"
-          whileHover={{ scale: 1.06 }}
-          whileTap={{ scale: 0.95 }}
-          onClick={() => navigate("/portfolio")}
-        >
-          Ver portafolio
-        </motion.button>
+        <motion.div className="hero-actions" variants={item}>
+          <button className="cta" onClick={() => navigate("/portfolio")}>
+            Ver portafolio
+          </button>
+
+          <button
+            className="secondary"
+            onClick={() => navigate("/about")}
+          >
+            Sobre mí
+          </button>
+        </motion.div>
       </motion.div>
     </section>
   );

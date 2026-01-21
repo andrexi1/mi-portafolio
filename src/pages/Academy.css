@@ -1,0 +1,32 @@
+.page.academy {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 70px 40px;
+}
+
+.page.academy h1 {
+  font-size: 2.4rem;
+  margin-bottom: 24px;
+}
+
+.page.academy h2 {
+  font-size: 1.3rem;
+  margin-top: 32px;
+  margin-bottom: 14px;
+  color: var(--accent);
+}
+
+.page.academy p {
+  font-size: 1.05rem;
+  margin-bottom: 10px;
+  color: #cbd5f5;
+}
+
+.page.academy ul {
+  padding-left: 22px;
+}
+
+.page.academy li {
+  margin-bottom: 8px;
+  color: #cbd5f5;
+}

@@ -5,27 +5,35 @@ import "./Portfolio.css";
 const projects = [
   {
     id: 1,
-    title: "Sistema de Parqueadero",
-    stack: "Java · Oracle · Spring Boot",
+    title: "Life Company",
+    stack: "React · Firebase",
     description:
-      "Sistema para gestión de parqueaderos con control de ingresos, salidas y reportes.",
-    image: "",
+      "Aplicación con login, encuesta y dashboard que estima la esperanza de vida según respuestas del usuario.",
+    github: "https://github.com/andrexi1/lifeCompany-react",
   },
   {
     id: 2,
-    title: "Batalla Naval",
-    stack: "React · Java · WebSockets",
+    title: "Git Search",
+    stack: "React · GitHub API",
     description:
-      "Juego de batalla naval con modo local y lógica completa de turnos.",
-    image: "",
+      "Buscador de usuarios y repositorios de GitHub usando su API oficial.",
+    github: "https://github.com/andrexi1/Gif-Search",
   },
   {
     id: 3,
+    title: "Subscriptions App",
+    stack: "React · JavaScript",
+    description:
+      "Aplicación para gestionar suscripciones y controlar gastos mensuales.",
+    github: "https://github.com/andrexi1/subscriptions",
+  },
+  {
+    id: 4,
     title: "Portafolio Profesional",
     stack: "React · Framer Motion",
     description:
-      "Portafolio personal con animaciones, temas y arquitectura escalable.",
-    image: "",
+      "Portafolio personal con animaciones, cambio de tema y arquitectura escalable.",
+    github: "https://github.com/andrexi1/mi-portafolio",
   },
 ];
 
@@ -33,15 +41,10 @@ export default function Portfolio() {
   const [selected, setSelected] = useState(null);
 
   return (
-    <motion.section
-      className="page portfolio"
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.4 }}
-    >
+    <section className="page portfolio">
       <header className="portfolio-header">
         <h1>Portafolio</h1>
-        <p>Algunos proyectos en los que he trabajado.</p>
+        <p>Proyectos reales desarrollados en React y Java</p>
       </header>
 
       <div className="portfolio-grid">
@@ -51,22 +54,13 @@ export default function Portfolio() {
             className="project-card"
             onClick={() => setSelected(project)}
           >
-            <div className="project-image">
-              <img
-                src={project.image || "/project-placeholder.svg"}
-                alt={project.title}
-                loading="lazy"
-              />
-            </div>
-
-            <div className="project-content">
-              <h3>{project.title}</h3>
-              <span>{project.stack}</span>
-            </div>
+            <h3>{project.title}</h3>
+            <span>{project.stack}</span>
           </article>
         ))}
       </div>
 
+      {/* MODAL */}
       <AnimatePresence>
         {selected && (
           <motion.div
@@ -81,18 +75,20 @@ export default function Portfolio() {
               initial={{ scale: 0.9, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.9, opacity: 0 }}
-              transition={{ duration: 0.25 }}
               onClick={(e) => e.stopPropagation()}
             >
-              <img
-                src={selected.image || "/project-placeholder.svg"}
-                alt={selected.title}
-              />
+              <h2>{selected.title}</h2>
+              <span>{selected.stack}</span>
+              <p>{selected.description}</p>
 
-              <div className="modal-content">
-                <h2>{selected.title}</h2>
-                <span>{selected.stack}</span>
-                <p>{selected.description}</p>
+              <div className="modal-actions">
+                <a
+                  href={selected.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Ver código en GitHub
+                </a>
 
                 <button onClick={() => setSelected(null)}>Cerrar</button>
               </div>
@@ -100,6 +96,6 @@ export default function Portfolio() {
           </motion.div>
         )}
       </AnimatePresence>
-    </motion.section>
+    </section>
   );
 }

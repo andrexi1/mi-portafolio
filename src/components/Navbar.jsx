@@ -1,47 +1,41 @@
 import { NavLink } from "react-router-dom";
+import { useState } from "react";
 import ThemeToggle from "./ThemeToggle";
 import "./Navbar.css";
 
 export default function Navbar() {
+  const [open, setOpen] = useState(false);
+
   return (
-    <nav className="navbar">
-      <span className="navbar-logo">Andrés</span>
+    <header className="navbar">
+      <NavLink to="/" className="navbar-logo">
+        Andrés
+      </NavLink>
 
-      <ul className="navbar-links">
-        <li>
-          <NavLink to="/" className="nav-link">
-            Inicio
-          </NavLink>
-        </li>
+      <button
+        className="menu-btn"
+        onClick={() => setOpen(!open)}
+        aria-label="Abrir menú"
+      >
+        ☰
+      </button>
 
-        <li>
-          <NavLink to="/about" className="nav-link">
-            Sobre mí
-          </NavLink>
-        </li>
+      <nav className={`navbar-menu ${open ? "open" : ""}`}>
+        <NavLink to="/" onClick={() => setOpen(false)}>
+          Inicio
+        </NavLink>
+        <NavLink to="/about" onClick={() => setOpen(false)}>
+          Sobre mí
+        </NavLink>
+        <NavLink to="/portfolio" onClick={() => setOpen(false)}>
+          Portafolio
+        </NavLink>
+        <NavLink to="/academy" onClick={() => setOpen(false)}>
+          Academia
+        </NavLink>
 
-        <li>
-          <NavLink to="/portfolio" className="nav-link">
-            Portafolio
-          </NavLink>
-        </li>
-
-        <li>
-          <NavLink to="/experience" className="nav-link">
-            Experiencia
-          </NavLink>
-        </li>
-
-        <li>
-          <NavLink to="/academy" className="nav-link">
-            Academia
-          </NavLink>
-        </li>
-
-        <li className="theme-item">
-          <ThemeToggle />
-        </li>
-      </ul>
-    </nav>
+        <ThemeToggle />
+      </nav>
+    </header>
   );
 }

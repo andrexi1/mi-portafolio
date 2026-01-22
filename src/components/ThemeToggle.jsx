@@ -3,36 +3,22 @@ import { ThemeContext } from "../context/ThemeContext";
 import "./ThemeToggle.css";
 
 export default function ThemeToggle() {
-  const { setTheme, theme } = useContext(ThemeContext);
+  const { setTheme } = useContext(ThemeContext);
   const [open, setOpen] = useState(false);
 
-  const changeTheme = (value) => {
-    setTheme(value);
-    setOpen(false);
-  };
-
   return (
-    <div className={`theme-toggle ${open ? "open" : ""}`}>
+    <div className="theme-toggle">
       <button
         className="theme-btn"
         onClick={() => setOpen(!open)}
       >
-        Tema
+        Tema ▾
       </button>
 
       {open && (
         <div className="theme-menu">
-          <button onClick={() => changeTheme("light")}>
-            Claro {theme === "light" && "✓"}
-          </button>
-
-          <button onClick={() => changeTheme("dark")}>
-            Oscuro {theme === "dark" && "✓"}
-          </button>
-
-          <button onClick={() => changeTheme("system")}>
-            Sistema {theme === "system" && "✓"}
-          </button>
+          <button onClick={() => setTheme("light")}>Claro</button>
+          <button onClick={() => setTheme("dark")}>Oscuro</button>
         </div>
       )}
     </div>

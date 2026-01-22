@@ -1,102 +1,66 @@
-/* ===== NAVBAR ===== */
 .navbar {
   height: 70px;
-  padding: 0 48px;
+  padding: 0 1.5rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
-
-  background: color-mix(in srgb, var(--bg) 85%, #000);
-  backdrop-filter: blur(12px);
-
+  background: var(--navbar-bg);
+  border-bottom: 1px solid var(--border);
   position: sticky;
   top: 0;
   z-index: 1000;
-
-  overflow-x: hidden;
 }
 
-/* ===== LOGO ===== */
 .navbar-logo {
-  font-size: 1.4rem;
+  font-size: 1.3rem;
   font-weight: 600;
   color: var(--text);
   text-decoration: none;
-  position: relative;
 }
 
-.navbar-logo::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -6px;
-  width: 0;
-  height: 2px;
-  background: var(--accent);
-  transition: width 0.3s ease;
+/* BOTÓN MENÚ */
+.menu-btn {
+  display: none;
+  font-size: 1.6rem;
+  background: none;
+  border: none;
+  color: var(--text);
+  cursor: pointer;
 }
 
-.navbar-logo:hover::after {
-  width: 100%;
-}
-
-/* ===== LINKS ===== */
-.navbar-links {
+/* MENÚ */
+.navbar-menu {
   display: flex;
   align-items: center;
-  gap: 32px;
-  list-style: none;
-  margin: 0;
-  padding: 0;
+  gap: 1.5rem;
 }
 
-/* ===== LINK ===== */
-.nav-link {
+.navbar-menu a {
   color: var(--text);
   text-decoration: none;
   font-size: 0.95rem;
-  position: relative;
-  padding: 4px 0;
 }
 
-/* underline */
-.nav-link::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -6px;
-  width: 0;
-  height: 2px;
-  background: var(--accent);
-  transition: width 0.3s ease;
-}
-
-/* hover */
-.nav-link:hover::after {
-  width: 100%;
-}
-
-/* active */
-.nav-link.active::after {
-  width: 100%;
-}
-
-/* ===== THEME ===== */
-.theme-item {
-  margin-left: 10px;
-}
-
-.navbar-logo {
-  cursor: default;
-}
-
-/* ===== RESPONSIVE ===== */
+/* ===== MOBILE ===== */
 @media (max-width: 768px) {
-  .navbar {
-    padding: 0 24px;
+  .menu-btn {
+    display: block;
   }
 
-  .navbar-links {
-    gap: 18px;
+  .navbar-menu {
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background: var(--navbar-bg);
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem 1.5rem;
+    gap: 1rem;
+    display: none;
+  }
+
+  .navbar-menu.open {
+    display: flex;
   }
 }

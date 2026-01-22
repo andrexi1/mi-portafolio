@@ -1,16 +1,21 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import projects from "../data/Projects";
+import { getGithubProjects } from "../services/github";
 import "./Portfolio.css";
 
 export default function Portfolio() {
+  const [projects, setProjects] = useState([]);
   const [selected, setSelected] = useState(null);
+
+  useEffect(() => {
+    getGithubProjects().then(setProjects);
+  }, []);
 
   return (
     <section className="page portfolio">
       <header className="portfolio-header">
         <h1>Portafolio</h1>
-        <p>Proyectos reales en los que he trabajado</p>
+        <p>Proyectos reales obtenidos desde GitHub</p>
       </header>
 
       <div className="portfolio-grid">
@@ -26,7 +31,6 @@ export default function Portfolio() {
         ))}
       </div>
 
-      {/* MODAL */}
       <AnimatePresence>
         {selected && (
           <motion.div

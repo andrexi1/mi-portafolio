@@ -1,17 +1,41 @@
-.page.about {
+.about {
   max-width: 900px;
   margin: 0 auto;
-  padding: 70px 40px;
+  padding: 4rem 1.5rem;
 }
 
-.page.about h1 {
-  font-size: 2.4rem;
-  margin-bottom: 24px;
+.about-header {
+  margin-bottom: 2.5rem;
 }
 
-.page.about p {
-  font-size: 1.05rem;
-  line-height: 1.8;
-  color: #cbd5f5;
-  margin-bottom: 18px;
+.about-header h1 {
+  font-size: 2.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.about-header p {
+  color: var(--text-muted);
+  max-width: 600px;
+}
+
+.about-content p {
+  margin-bottom: 1.3rem;
+  line-height: 1.7;
+  max-width: 720px;
+}
+
+.about-tags {
+  margin-top: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.about-tags span {
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  font-size: 0.85rem;
+  color: var(--text);
 }

@@ -1,33 +1,52 @@
-.page.experience {
+.experience {
   max-width: 900px;
   margin: 0 auto;
-  padding: 70px 40px;
+  padding: 4rem 1.5rem;
 }
 
-.page.experience h1 {
-  font-size: 2.4rem;
-  margin-bottom: 30px;
+.experience-header {
+  margin-bottom: 3rem;
 }
 
-.page.experience h2 {
-  font-size: 1.3rem;
-  margin-bottom: 16px;
-  color: var(--accent);
+.experience-header h1 {
+  font-size: 2.2rem;
+  margin-bottom: 0.5rem;
 }
 
-.page.experience ul {
-  padding-left: 22px;
-  margin-bottom: 24px;
+.experience-header p {
+  color: var(--text-muted);
+  max-width: 600px;
 }
 
-.page.experience li {
-  margin-bottom: 10px;
+.experience-item {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 2rem;
+}
+
+.experience-item h2 {
+  font-size: 1.4rem;
+  margin-bottom: 0.3rem;
+}
+
+.experience-date {
+  display: inline-block;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin-bottom: 1rem;
+}
+
+.experience-item p {
+  margin-bottom: 1.2rem;
   line-height: 1.6;
-  color: #cbd5f5;
 }
 
-.page.experience p {
-  font-size: 1.05rem;
-  line-height: 1.7;
-  color: #cbd5f5;
+.experience-item ul {
+  padding-left: 1.2rem;
+}
+
+.experience-item li {
+  margin-bottom: 0.6rem;
+  line-height: 1.5;
 }

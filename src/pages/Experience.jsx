@@ -1,36 +1,47 @@
+import { useEffect } from "react";
 import "./Experience.css";
 
 export default function Experience() {
+  useEffect(() => {
+    document.title = "Experiencia | Andrés Barrera";
+  }, []);
+
   return (
     <section className="page experience">
-      <h1>Experiencia</h1>
+      <header className="experience-header">
+        <h1>Experiencia</h1>
+        <p>
+          Experiencia práctica en desarrollo frontend y aplicaciones web,
+          trabajando de forma freelance y en equipo.
+        </p>
+      </header>
 
-      <h2>Desarrollador Web Freelance</h2>
+      <article className="experience-item">
+        <h2>Desarrollador Frontend Freelance</h2>
+        <span className="experience-date">2023 – Presente</span>
 
-      <ul>
-        <li>
-          Desarrollo de un <strong>libro interactivo</strong> para el Ministerio
-          de Culturas, enfocado en experiencia de usuario y navegación fluida.
-        </li>
-        <li>
-          Creación de una <strong>aplicación web con dashboard</strong> que calcula
-          la esperanza de vida de una persona a partir de encuestas.
-        </li>
-        <li>
-          Implementación de <strong>sistema de autenticación</strong>, manejo de
-          usuarios y conexión a <strong>Firebase</strong>.
-        </li>
-        <li>
-          Trabajo colaborativo en equipo, participando en la planificación,
-          desarrollo y ajustes finales del producto.
-        </li>
-      </ul>
+        <p>
+          Desarrollo de aplicaciones web utilizando tecnologías modernas,
+          enfocado en crear soluciones funcionales, mantenibles y orientadas
+          a la experiencia del usuario.
+        </p>
 
-      <p>
-        Aunque no he trabajado formalmente en una empresa, he asumido
-        responsabilidades reales en proyectos freelance y académicos, cumpliendo
-        objetivos y tiempos de entrega.
-      </p>
+        <ul>
+          <li>
+            Desarrollo de un <strong>libro interactivo</strong> para el
+            Ministerio de Culturas, con navegación dinámica y enfoque educativo.
+          </li>
+          <li>
+            Creación de una <strong>aplicación web con dashboard</strong>,
+            autenticación y conexión a Firebase, basada en encuestas
+            personalizadas.
+          </li>
+          <li>
+            Trabajo colaborativo en equipo utilizando <strong>Git</strong>
+            y buenas prácticas de desarrollo.
+          </li>
+        </ul>
+      </article>
     </section>
   );
 }
